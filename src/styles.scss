@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+}
+
+:root {
+  --bg-color: #ffffff;
+
+  --title-color: #3d316f;
+  --form-bg-color: rgb(246 245 251);
+
+  --btn-bg-color-enable: #3d316f;
+  --btn-bg-color-disabled: rgb(232 229 243);
+  --btn-color-enable: #eceafb;
+  --btn-color-disabled: #3d316f;
+
+  --error-color: #ff3727;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card {
+  max-width: 22rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+}
+
+.titleWrapper {
+  margin: 4rem auto 2.8rem;
+}
+
+.title {
+  color: var(--title-color);
+  border: 5px solid;
+  width: 12rem;
+  height: 12rem;
+  padding: 2.7rem 3.6rem;
+  margin: 0;
+
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
+}
+
+.formControl {
+  width: 20rem;
+  //background-color: var(--form-bg-color);
+  margin: 0.5rem 0;
+
+  border-radius: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mat-form-field {
+  width: 90%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--form-bg-color) inset;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.btn {
+  background-color: var(--btn-bg-color-enable);
+  color: var(--btn-color-enable);
+  width: 15rem;
+  height: 3rem;
+}
+
+.btnIco {
+  border: none;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+
