@@ -1,16 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {MainPageComponent} from './Pages/main-page/main-page.component';
-
-
-
+import {AuthGuard} from '../auth/services/auth.guard';
 
 const routes: Routes = [
   {
-    path: '', children: [
-      {path: '', redirectTo: 'main'},
-      {path: 'main', component: MainPageComponent}
-    ]
+    path: '', component: MainPageComponent, canActivate: [AuthGuard]
   }
 ];
 
@@ -20,3 +15,4 @@ const routes: Routes = [
 })
 export class MainRoutingModule {
 }
+

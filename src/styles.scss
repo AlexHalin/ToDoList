@@ -95,4 +95,15 @@ input:-webkit-autofill {
   cursor: pointer;
 }
 
+.alert {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: white;
+  color: #333;
+}
 
+.alert-danger {
+  background: var(--error-color);
+  color: #fff;
+}

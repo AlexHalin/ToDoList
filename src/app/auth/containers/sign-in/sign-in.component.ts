@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+import {User} from '../../../shared/interfaces';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +15,11 @@ export class SignInComponent implements OnInit {
   submitted = false;
   hide = true;
 
-  constructor() { }
+  constructor(
+    public auth: AuthService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -26,8 +33,26 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  check() {
-    console.log('submit!');
+  submit() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.submitted = true;
+
+    const user: User = {
+      email: this.form.value.email,
+      password: this.form.value.password
+    };
+
+    this.auth.login(user).subscribe(() => {
+      this.form.reset();
+      this.router.navigate(['/main']);
+      this.submitted = false;
+    }, () => {
+      this.submitted = false
+    });
+
   }
 
 }
