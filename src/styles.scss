@@ -14,7 +14,9 @@ body {
   --bg-color: #ffffff;
 
   --title-color: #3d316f;
-  --form-bg-color: rgb(246 245 251);
+
+  --nav-color: #e8e5f3;
+  --1-1:#cde4e4#479696;
 
   --btn-bg-color-enable: #3d316f;
   --btn-bg-color-disabled: rgb(232 229 243);
@@ -73,7 +75,7 @@ body {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px var(--form-bg-color) inset;
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-color) inset;
 }
 
 .btnWrapper {
@@ -96,8 +98,9 @@ input:-webkit-autofill {
 }
 
 .alert {
-  padding: 0.7rem;
-  margin: 1rem 0;
+  width: 90%;
+  padding: 0.4rem;
+  margin: 0 0 0.5rem;
   opacity: 0.9;
   background: white;
   color: #333;
@@ -106,4 +109,14 @@ input:-webkit-autofill {
 .alert-danger {
   background: var(--error-color);
   color: #fff;
+}
+
+.mat-tab-links {
+  background-color: var(--bg-color);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mat-icon-button {
+
 }

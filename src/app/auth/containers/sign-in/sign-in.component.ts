@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
       this.router.navigate(['/main']);
       this.submitted = false;
     }, () => {
-      this.submitted = false
+      this.submitted = false;
     });
 
   }

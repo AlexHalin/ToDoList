@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {AuthService} from './auth/services/auth.service';
 import {AuthGuard} from './auth/services/auth.guard';
+import {UnauthGuard} from './auth/services/unauth.guard';
 
 
 
@@ -24,7 +25,7 @@ import {AuthGuard} from './auth/services/auth.guard';
     BrowserAnimationsModule,
     SharedModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, UnauthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

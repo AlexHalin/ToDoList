@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#3D316F;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#3D316F;}
+	.st2{font-family:'MyriadPro-Regular';}
+	.st3{font-size:72px;}
+	.st4{fill:none;}
+	.st5{fill:none;stroke:#3D316F;stroke-width:5;stroke-miterlimit:10;}
+	.st6{fill:#3D316F;stroke:#3D316F;stroke-width:5;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;}
+</style>
+<g id="Слой_1">
+	<path class="st0" d="M5,5v500h500V5H5z M226.15,312.57c-1.64,0-1.64-2.54,0-2.54C227.79,310.03,227.78,312.57,226.15,312.57z
+		 M228.08,310.4c-1.64,0-1.64-2.54,0-2.54C229.72,307.86,229.71,310.4,228.08,310.4z"/>
+	<text transform="matrix(1 0 0 1 239.7129 203.1484)"><tspan x="0" y="0" class="st1 st2 st3">To</tspan><tspan x="0" y="72" class="st1 st2 st3">Do</tspan><tspan x="0" y="144" class="st1 st2 st3">List</tspan></text>
+	<line class="st4" x1="146" y1="321" x2="151" y2="326"/>
+</g>
+<g id="Слой_2">
+	<rect x="189.5" y="157.5" class="st5" width="44" height="44"/>
+	<rect x="189.5" y="230.5" class="st5" width="44" height="44"/>
+	<path class="st6" d="M189.5,303.5v44h44v-44H189.5z M226.15,312.57c-1.64,0-1.64-2.54,0-2.54
+		C227.79,310.03,227.78,312.57,226.15,312.57z M228.08,310.4c-1.64,0-1.64-2.54,0-2.54C229.72,307.86,229.71,310.4,228.08,310.4z"/>
+</g>
+<g id="Слой_3">
+	<path class="st4" d="M152,327c0.7,1.17,2.22,3.34,2.41,3.57C155.57,332,156,332,156,332l9-11"/>
+	<path class="st4" d="M131,316"/>
+	<g>
+		<g>
+			<path class="st7" d="M195.45,327.74c3.74,4.51,7.69,8.82,11.85,12.94c0.91,0.9,2.5,0.72,3.14-0.4
+				c5.31-9.33,11.28-18.29,17.9-26.75c0.66-0.85,0.83-2,0-2.83c-0.69-0.69-2.16-0.86-2.83,0c-6.83,8.73-13.04,17.92-18.52,27.56
+				c1.05-0.13,2.09-0.27,3.14-0.4c-4.16-4.12-8.11-8.44-11.85-12.94C196.63,322.93,193.82,325.77,195.45,327.74L195.45,327.74z"/>
+		</g>
+	</g>
+</g>
+</svg>
