@@ -12,17 +12,8 @@ body {
 
 :root {
   --bg-color: #ffffff;
-
-  --title-color: #3d316f;
-
-  --nav-color: #e8e5f3;
-  --1-1:#cde4e4#479696;
-
-  --btn-bg-color-enable: #3d316f;
-  --btn-bg-color-disabled: rgb(232 229 243);
-  --btn-color-enable: #eceafb;
-  --btn-color-disabled: #3d316f;
-
+  --main-color: #3d316f;
+  --btn-text-color-enable: #eceafb;
   --error-color: #ff3727;
 }
 
@@ -46,21 +37,17 @@ body {
 }
 
 .title {
-  color: var(--title-color);
+  color: var(--main-color);
   border: 5px solid;
   width: 12rem;
   height: 12rem;
   padding: 2.7rem 3.6rem;
   margin: 0;
 
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
 }
 
 .formControl {
   width: 20rem;
-  //background-color: var(--form-bg-color);
   margin: 0.5rem 0;
 
   border-radius: 1.3rem;
@@ -85,15 +72,15 @@ input:-webkit-autofill {
 }
 
 .btn {
-  background-color: var(--btn-bg-color-enable);
-  color: var(--btn-color-enable);
+  background-color: var(--main-color);
+  color: var(--btn-text-color-enable);
   width: 15rem;
   height: 3rem;
 }
 
 .btnIco {
   border: none;
-  color: var(--title-color);
+  color: var(--main-color);
   cursor: pointer;
 }
 
@@ -111,12 +98,17 @@ input:-webkit-autofill {
   color: #fff;
 }
 
-.mat-tab-links {
-  background-color: var(--bg-color);
-  align-items: center;
-  justify-content: space-between;
+// <sign-in && up focus border bottom>
+.mat-form-field-ripple {
+  background-color: var(--main-color);
 }
-
-.mat-icon-button {
-
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: var(--main-color);
 }
+// </sign-in && up focus border bottom>
+
+// <navigation focus border bottom>
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: var(--main-color);
+}
+// </navigation focus border bottom>

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthService} from '../../auth/services/auth.service';
-import {MainRouteButtons} from '../main-const';
-import {NavigateButtonData} from '../../../environments/interface';
+import {AuthService} from '../../../auth/services/auth.service';
+import {MainRouteButtons} from '../../main-const';
+import {NavigateButtonData} from '../../../../environments/interface';
 
 @Component({
   selector: 'app-navigate',
@@ -23,12 +23,6 @@ export class NavigateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  logout(event: Event) {
-    event.preventDefault();
-    this.auth.logout();
-    this.router.navigate(['/auth']);
   }
 
 }
