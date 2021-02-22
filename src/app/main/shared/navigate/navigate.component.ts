@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../auth/services/auth.service';
 import {MainRouteButtons} from '../../main-const';
-import {NavigateButtonData} from '../../../../environments/interface';
+import {NavigateButtonData} from '../../../shared/interfaces';
+
 
 @Component({
   selector: 'app-navigate',

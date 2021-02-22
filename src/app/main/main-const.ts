@@ -1,4 +1,5 @@
-import {NavigateButtonData} from '../../environments/interface';
+import {NavigateButtonData} from '../shared/interfaces';
+
 
 export const MainRouteButtons: NavigateButtonData[] = [
   {

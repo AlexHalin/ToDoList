@@ -13,7 +13,7 @@
     </div>
     <mat-form-field appearance="legacy">
       <mat-label>Email:</mat-label>
-      <input class="mat-form-field" matInput formControlName="email">
+      <input class="mat-form-field" matInput type="email" formControlName="email">
       <mat-error *ngIf="form.get('email').invalid && form.get('email').touched">
         <mat-hint *ngIf="form.get('email').errors.required">Email is missing</mat-hint>
         <mat-hint *ngIf="form.get('email').errors.email">Enter a valid email address</mat-hint>
@@ -25,9 +25,11 @@
     <mat-form-field appearance="legacy">
       <mat-label>Password:</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix type="button" class="btnIcoColor" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
       <mat-error *ngIf="form.get('password').invalid && form.get('password').touched">
         <mat-hint *ngIf="form.get('password').errors.required">Password is missing</mat-hint>
-
       </mat-error>
     </mat-form-field>
   </div>

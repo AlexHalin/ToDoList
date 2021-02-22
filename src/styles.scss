@@ -65,6 +65,10 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px var(--bg-color) inset;
 }
 
+.content { // todo delete dnt used
+  max-width: 100%;
+}
+
 .btnWrapper {
   display: flex;
   flex-direction: column;
@@ -78,10 +82,8 @@ input:-webkit-autofill {
   height: 3rem;
 }
 
-.btnIco {
-  border: none;
+.btnIcoColor {
   color: var(--main-color);
-  cursor: pointer;
 }
 
 .alert {
@@ -98,6 +100,32 @@ input:-webkit-autofill {
   color: #fff;
 }
 
+h2 {
+  margin: 0;
+}
+
+.todo-card {
+  margin: 0.5rem auto 0;
+  max-width: 22rem;
+}
+
+.todo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.todo-form { // todo delete dnt used
+  margin: 0 auto;
+}
+
+.iHide {
+  visibility: hidden;
+}
+.iShow {
+  visibility: visible;
+}
+
+
 // <sign-in && up focus border bottom>
 .mat-form-field-ripple {
   background-color: var(--main-color);
@@ -112,3 +140,4 @@ input:-webkit-autofill {
   background-color: var(--main-color);
 }
 // </navigation focus border bottom>
+

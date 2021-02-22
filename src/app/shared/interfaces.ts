@@ -8,3 +8,8 @@ export interface FbAuthResponse {
   idToken: string;
   expiresIn: string;
 }
+
+export interface NavigateButtonData {
+  tittle: string;
+  url: string;
+}

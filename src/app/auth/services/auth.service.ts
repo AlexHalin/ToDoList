@@ -10,7 +10,7 @@ import {catchError, tap} from 'rxjs/operators';
 })
 export class AuthService {
 
-  public error$: Subject<string> = new Subject<string>()
+  public error$: Subject<string> = new Subject<string>();
 
   constructor(private http: HttpClient) {
   }
@@ -45,13 +45,13 @@ export class AuthService {
     const {message} = error.error.error;
     switch (message) {
       case 'INVALID_EMAIL':
-        this.error$.next('Неверный email');
+        this.error$.next('Incorrect email');
         break;
       case 'INVALID_PASSWORD':
-        this.error$.next('Неверный пароль');
+        this.error$.next('Incorrect password');
         break;
       case 'EMAIL_NOT_FOUND':
-        this.error$.next('Такого email нет');
+        this.error$.next('Incorrect email');
         break;
 
     }
