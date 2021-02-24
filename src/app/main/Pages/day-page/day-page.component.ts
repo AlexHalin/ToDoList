@@ -1,45 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatTreeNestedDataSource} from '@angular/material/tree';
-import {NestedTreeControl} from '@angular/cdk/tree';
-
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
-
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
-    ]
-  },
-  {
-    name: 'Milk'
-  },
-  {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          {name: 'Broccoli'},
-          {name: 'Brussels sprouts'},
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          {name: 'Pumpkins'},
-          {name: 'Carrots'},
-        ]
-      },
-    ]
-  },
-];
+import {List} from '../../../shared/interfaces';
+import {ListService} from '../../../shared/list.service';
+import {Subscription} from 'rxjs';
 
 
 @Component({
@@ -47,27 +11,26 @@ const TREE_DATA: FoodNode[] = [
   templateUrl: './day-page.component.html',
   styleUrls: ['./day-page.component.scss']
 })
-export class DayPageComponent {
+export class DayPageComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
-
+  lists: List[];
+  listSub: Subscription;
   hideForm = true;
 
-  treeControl = new NestedTreeControl<FoodNode>(node => node.children);
-  dataSource = new MatTreeNestedDataSource<FoodNode>();
+  constructor(private listService: ListService) {
 
-  constructor() {
-    this.dataSource.data = TREE_DATA;
   }
-
-  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
-
 
   ngOnInit() {
     this.form = new FormGroup({
-      ToDo: new FormControl(null, [
+      todo: new FormControl(null, [
         Validators.required,
       ])
+    });
+
+    this.listSub = this.listService.getAll().subscribe(lists => {
+      this.lists = lists;
     });
   }
 
@@ -76,15 +39,22 @@ export class DayPageComponent {
   }
 
   addToDo() {
-    console.log(TREE_DATA);
+    if (this.form.invalid) {
+      return;
+    }
+
+    const list: List = {
+      todo: this.form.value.todo
+    };
+
+    this.listService.create(list).subscribe(() => {
+      this.form.reset();
+    });
   }
 
-  onInput(event: any, inputValue: string) {
-
-    const value = event.target.value;
-    console.log(inputValue);
-    TREE_DATA.push({name: value});
-    this.form.reset();
-    this.hideForm = true;
+  ngOnDestroy() {
+    if (this.listSub) {
+      this.listSub.unsubscribe();
+    }
   }
 }

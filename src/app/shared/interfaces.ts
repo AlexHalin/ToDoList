@@ -13,3 +13,12 @@ export interface NavigateButtonData {
   tittle: string;
   url: string;
 }
+
+export interface List {
+  id?: string;
+  todo: string;
+}
+
+export interface FbCreateResponse {
+  name: string;
+}
