@@ -5,19 +5,31 @@
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </div>
-  <div *ngFor="let list of lists">
-    <p>{{list.todo}}</p>
-  </div>
 
-  <form class="todo-form" [hidden]="hideForm" [formGroup]="form" (ngSubmit)="addToDo()">
+  <form *ngFor="let list of lists" class="todo-form">
+    <mat-checkbox
+      class="example-margin"
+      (change)="checkBoxValue(list)"
+    >{{list.toDo}}
+    </mat-checkbox>
+
+    <button mat-icon-button type="button" class="btnIcoColor btnCenter">
+      <a (click)="remove(list.id)">
+        <mat-icon>clear</mat-icon>
+      </a>
+    </button>
+  </form>
+
+  <form [hidden]="hideForm" [formGroup]="form" (ngSubmit)="addToDo()">
     <mat-form-field appearance="legacy">
       <mat-label>Add to-do</mat-label>
-      <input class="mat-form-field" matInput formControlName="todo" autocomplete="off">
-      <button mat-icon-button matSuffix type="button" (click)="hideForm = true">
-        <mat-icon>clear</mat-icon>
-      </button>
+      <input matInput
+             class="mat-form-field"
+             #inputAdd
+             formControlName="todo"
+             autocomplete="off"
+             (focusout)="hideForm = true; addToDo()">
     </mat-form-field>
-    <button type="submit" [disabled]="form.invalid">Save</button>
   </form>
 </section>
 

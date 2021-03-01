@@ -17,9 +17,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTreeModule} from '@angular/material/tree';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
@@ -34,21 +34,21 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     HourPageComponent,
     DragAndDropComponent
   ],
-    imports: [
-        MainRoutingModule,
-        CommonModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatTreeModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatCheckboxModule,
-        ReactiveFormsModule,
-        FormsModule
-    ]
+  imports: [
+    MainRoutingModule,
+    CommonModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    FormsModule
+  ]
 })
 
 export class MainModule {

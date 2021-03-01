@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {FbCreateResponse, List} from './interfaces';
+import {FbCreateResponse, ToDoList} from './interfaces';
 import {environment} from '../../environments/environment';
 import {map} from 'rxjs/operators';
 
@@ -10,7 +10,7 @@ export class ListService {
   constructor(private http: HttpClient) {
   }
 
-  create(list: List): Observable<List> {
+  create(list: ToDoList): Observable<ToDoList> {
     return this.http.post(`${environment.fbDbUrl}/lists.json`, list)
       .pipe(map((response: FbCreateResponse) => {
         return {
@@ -20,7 +20,8 @@ export class ListService {
       }));
   }
 
-  getAll(): Observable<List[]> {
+
+  getAll(): Observable<ToDoList[]> {
     return this.http.get(`${environment.fbDbUrl}/lists.json`)
       .pipe(map((response: { [key: string]: any }) => {
         return Object
@@ -31,4 +32,23 @@ export class ListService {
           }));
       }));
   }
+
+  getById(id: string): Observable<ToDoList> {
+    return this.http.get<ToDoList>(`${environment.fbDbUrl}/lists/${id}.json`)
+      .pipe(map((list: ToDoList) => {
+        return {
+          ...list,
+          id
+        };
+      }));
+  }
+
+  remove(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.fbDbUrl}/lists/${id}.json`)
+  }
+
+  update(list: ToDoList): Observable<ToDoList> {
+    return this.http.patch<ToDoList>(`${environment.fbDbUrl}/lists/${list.id}.json`, list)
+  }
+
 }

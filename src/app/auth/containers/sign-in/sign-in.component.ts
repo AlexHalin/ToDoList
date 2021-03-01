@@ -24,7 +24,6 @@ export class SignInComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.route.queryParams.subscribe((params: Params) => {
       if (params['loginAgain']) {
         this.message = 'Пожалуйста введите данные'; //todo make this srt in eng

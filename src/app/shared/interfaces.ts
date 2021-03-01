@@ -14,9 +14,11 @@ export interface NavigateButtonData {
   url: string;
 }
 
-export interface List {
+export interface ToDoList {
   id?: string;
-  todo: string;
+  toDo: string;
+  children?: string;
+  checked?: boolean;
 }
 
 export interface FbCreateResponse {
