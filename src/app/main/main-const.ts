@@ -3,20 +3,16 @@ import {NavigateButtonData} from '../shared/interfaces';
 
 export const MainRouteButtons: NavigateButtonData[] = [
   {
-    tittle: 'Month',
-    url: '/main/month'
+    tittle: 'All',
+    url: '/main/allTodo'
   },
   {
-    tittle: 'Week',
-    url: '/main/week'
+    tittle: 'To Do',
+    url: '/main/todo'
   },
   {
-    tittle: 'Day',
-    url: '/main/day'
-  },
-  {
-    tittle: 'Hour',
-    url: '/main/hour'
+    tittle: 'Completed',
+    url: '/main/completed'
   }
 ];
 

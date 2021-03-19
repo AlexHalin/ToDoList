@@ -6,12 +6,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MainPageComponent} from './main-page/main-page.component';
 import {ToolbarComponent} from './shared/toolbar/toolbar.component';
 import {NavigateComponent} from './shared/navigate/navigate.component';
-import {MonthPageComponent} from './Pages/month-page/month-page.component';
-import {WeekPageComponent} from './Pages/week-page/week-page.component';
-import {DayPageComponent} from './Pages/day-page/day-page.component';
-import {HourPageComponent} from './Pages/hour-page/hour-page.component';
-import {DragAndDropComponent} from './shared/drag-and-drop/drag-and-drop.component';
-
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
@@ -21,6 +15,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { AllTodosPageComponent } from './Pages/all-todos-page/all-todos-page.component';
+import { NotCompletedPageComponent } from './Pages/not-completed-page/not-completed-page.component';
+import { CompletedPageComponent } from './Pages/completed-page/completed-page.component';
 
 
 @NgModule({
@@ -28,11 +25,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MainPageComponent,
     ToolbarComponent,
     NavigateComponent,
-    MonthPageComponent,
-    WeekPageComponent,
-    DayPageComponent,
-    HourPageComponent,
-    DragAndDropComponent
+    AllTodosPageComponent,
+    NotCompletedPageComponent,
+    CompletedPageComponent
   ],
   imports: [
     MainRoutingModule,

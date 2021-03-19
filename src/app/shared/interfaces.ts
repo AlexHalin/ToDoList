@@ -16,7 +16,7 @@ export interface NavigateButtonData {
 
 export interface ToDoList {
   id?: string;
-  toDo: string;
+  toDo?: string;
   children?: string;
   checked?: boolean;
 }

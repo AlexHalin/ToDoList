@@ -44,11 +44,11 @@ export class ListService {
   }
 
   remove(id: string): Observable<void> {
-    return this.http.delete<void>(`${environment.fbDbUrl}/lists/${id}.json`)
+    return this.http.delete<void>(`${environment.fbDbUrl}/lists/${id}.json`);
   }
 
   update(list: ToDoList): Observable<ToDoList> {
-    return this.http.patch<ToDoList>(`${environment.fbDbUrl}/lists/${list.id}.json`, list)
+    return this.http.patch<ToDoList>(`${environment.fbDbUrl}/lists/${list.id}.json`, list);
   }
 
 }

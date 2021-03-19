@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {User} from '../../../shared/interfaces';
@@ -17,6 +17,7 @@ export class SignInComponent implements OnInit {
   hide = true;
 
   constructor(
+    private formBuilder: FormBuilder,
     public auth: AuthService,
     private router: Router,
     private route: ActivatedRoute
@@ -32,14 +33,9 @@ export class SignInComponent implements OnInit {
       }
     });
 
-    this.form = new FormGroup({
-      email: new FormControl(null, [
-        Validators.required,
-        Validators.email
-      ]),
-      password: new FormControl(null, [
-        Validators.required,
-      ])
+    this.form = this.formBuilder.group({
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]]
     });
   }
 

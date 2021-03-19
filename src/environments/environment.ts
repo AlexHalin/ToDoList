@@ -6,8 +6,8 @@ import {Environment} from './interface';
 
 export const environment: Environment = {
   production: false,
-  apiKey: 'AIzaSyBbV0c2KqHCH9JrzO11gNsNUT1NN4CPVYA',
-  fbDbUrl: 'https://angular-to-do-list-e0c8f-default-rtdb.firebaseio.com'
+  apiKey: 'AIzaSyBFv5C2Q2f4ZzLYf_vB_7GMArJ63Hqgnzg',
+  fbDbUrl: 'https://todolist-9e0d1-default-rtdb.firebaseio.com'
 };
 
 /*

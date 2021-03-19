@@ -3,20 +3,18 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {NavigateComponent} from './shared/navigate/navigate.component';
 import {MainPageComponent} from './main-page/main-page.component';
-import {MonthPageComponent} from './Pages/month-page/month-page.component';
-import {WeekPageComponent} from './Pages/week-page/week-page.component';
-import {DayPageComponent} from './Pages/day-page/day-page.component';
-import {HourPageComponent} from './Pages/hour-page/hour-page.component';
+import {AllTodosPageComponent} from './Pages/all-todos-page/all-todos-page.component';
+import {NotCompletedPageComponent} from './Pages/not-completed-page/not-completed-page.component';
+import {CompletedPageComponent} from './Pages/completed-page/completed-page.component';
 
 
 const routes: Routes = [
   {
     path: '', component: MainPageComponent, children: [
-      {path: '', redirectTo: '/main/day', pathMatch: 'full'},
-      {path: 'month', component: MonthPageComponent},
-      {path: 'week', component: WeekPageComponent},
-      {path: 'day', component: DayPageComponent},
-      {path: 'hour', component: HourPageComponent}
+      {path: '', redirectTo: '/main/allTodo', pathMatch: 'full'},
+      {path: 'allTodo', component: AllTodosPageComponent},
+      {path: 'todo', component: NotCompletedPageComponent},
+      {path: 'completed', component: CompletedPageComponent}
     ]
   }
 ];
