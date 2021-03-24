@@ -37,12 +37,13 @@ body {
 }
 
 .title {
-  color: var(--main-color);
-  border: 5px solid;
+
+  background-image: url("assets/image/Logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 12rem;
   height: 12rem;
-  padding: 2.7rem 3.6rem;
-  margin: 0;
 
 }
 
