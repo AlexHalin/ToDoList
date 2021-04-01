@@ -63,6 +63,12 @@ export class AllTodosPageComponent implements OnInit {
     });
   }
 
+  remove(id: string) {
+    this.deleteSub = this.listService.remove(id).subscribe(() => {
+      this.lists = this.lists.filter(list => list.id !== id);
+    });
+  }
+
   getToDo() {
     this.listSub = this.listService.getAll().subscribe(lists => {
       this.lists = lists;

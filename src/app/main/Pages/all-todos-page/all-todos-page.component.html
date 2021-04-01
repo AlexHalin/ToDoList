@@ -8,15 +8,20 @@
     </div>
 
     <section *ngFor="let list of lists" class="todo-form" formArrayName="check">
-      <mat-checkbox
-        class="example-margin"
-        (change)="checkBoxValue(list)"
-        [checked]="list.checked"
+      <mat-checkbox class="example-margin"
+                    (change)="checkBoxValue(list)"
+                    [checked]="list.checked"
       >{{list.toDo}}
       </mat-checkbox>
+
+      <button mat-icon-button type="button" class="btnIcoColor btnCenter">
+        <a (click)="remove(list.id)">
+          <mat-icon>clear</mat-icon>
+        </a>
+      </button>
     </section>
 
-    <section [hidden]="hideForm" >
+    <section [hidden]="hideForm">
       <mat-form-field appearance="legacy">
         <mat-label>Add to-do</mat-label>
         <input matInput

@@ -4,7 +4,7 @@ import {NavigateButtonData} from '../shared/interfaces';
 export const MainRouteButtons: NavigateButtonData[] = [
   {
     tittle: 'All',
-    url: '/main/allTodo'
+    url: '/main/all-todo'
   },
   {
     tittle: 'To Do',

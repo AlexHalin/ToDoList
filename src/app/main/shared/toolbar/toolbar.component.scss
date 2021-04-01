@@ -3,6 +3,9 @@
 }
 
 .toolbar {
-  background-color: #b8b3d2;
-  border-bottom: 1px solid #3d316f;
+  background-color: var(--main-color);
+}
+
+.toolbar-style {
+  color: white;
 }

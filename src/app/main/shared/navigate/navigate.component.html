@@ -1,5 +1,5 @@
 <nav mat-tab-nav-bar class="nav">
-  <a mat-tab-link *ngFor="let link of linkArr"
+  <a mat-tab-link color="accent" *ngFor="let link of linkArr"
      [routerLink]="[link.url]"
      (click)="activeLink = link.url"
      [active]="activeLink == link.url"> {{link.tittle}}
