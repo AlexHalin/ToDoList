@@ -4,13 +4,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToDoList} from '../../../shared/interfaces';
 import {Subscription} from 'rxjs';
 import {ListService} from '../../../shared/list.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-all-todos-page',
-  templateUrl: './all-todos-page.component.html',
-  styleUrls: ['./all-todos-page.component.scss']
+  selector: 'app-todos-page',
+  templateUrl: './todos-page.component.html',
+  styleUrls: ['./todos-page.component.scss']
 })
-export class AllTodosPageComponent implements OnInit {
+export class TodosPageComponent implements OnInit {
   @ViewChild('inputAdd') inputAddElement: ElementRef;
 
   form: FormGroup;
@@ -19,16 +20,19 @@ export class AllTodosPageComponent implements OnInit {
   listSub: Subscription;
   deleteSub: Subscription;
   hideForm = true;
+  url: string;
 
   constructor(
     private formBuilder: FormBuilder,
-    private listService: ListService
+    private listService: ListService,
+    private activatedRoute: ActivatedRoute
   ) {
   }
 
   ngOnInit() {
+    this.url = this.activatedRoute.snapshot.url[0].path;
     this.form = this.formBuilder.group({
-      todo: [null, [Validators.maxLength(18)]], // todo change this
+      todo: [null, [Validators.maxLength(30)]], // todo change this
       check: this.formBuilder.array([])
     });
 

@@ -15,19 +15,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { AllTodosPageComponent } from './Pages/all-todos-page/all-todos-page.component';
-import { NotCompletedPageComponent } from './Pages/not-completed-page/not-completed-page.component';
-import { CompletedPageComponent } from './Pages/completed-page/completed-page.component';
-
+import { TodosPageComponent } from './Pages/todos-page/todos-page.component';
 
 @NgModule({
   declarations: [
     MainPageComponent,
     ToolbarComponent,
     NavigateComponent,
-    AllTodosPageComponent,
-    NotCompletedPageComponent,
-    CompletedPageComponent
+    TodosPageComponent,
+
   ],
   imports: [
     MainRoutingModule,

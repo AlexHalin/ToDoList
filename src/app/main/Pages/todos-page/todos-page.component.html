@@ -7,18 +7,21 @@
       </button>
     </div>
 
-    <section *ngFor="let list of lists" class="todo-form" formArrayName="check">
-      <mat-checkbox class="example-margin"
-                    (change)="checkBoxValue(list)"
-                    [checked]="list.checked"
-      >{{list.toDo}}
-      </mat-checkbox>
+    <section *ngFor="let list of lists" class="todo-wrapper" formArrayName="check">
+      <div class="todo-form" *ngIf="url === 'all-todo' || url === 'todo' && list.checked === false || url === 'completed' && list.checked === true">
+        <mat-checkbox class="example-margin"
 
-      <button mat-icon-button type="button" class="btnIcoColor btnCenter">
-        <a (click)="remove(list.id)">
-          <mat-icon>clear</mat-icon>
-        </a>
-      </button>
+                      (change)="checkBoxValue(list)"
+                      [checked]="list.checked"
+        >{{list.toDo}}
+        </mat-checkbox>
+
+        <button mat-icon-button type="button" class="btnIcoColor btnCenter">
+          <a (click)="remove(list.id)">
+            <mat-icon>clear</mat-icon>
+          </a>
+        </button>
+      </div>
     </section>
 
     <section [hidden]="hideForm">
